@@ -101,7 +101,7 @@ if (isset($_POST['submit'])) {
 ?>
 
 <html lang="en">
-<?php include('template/header.php'); ?>
+
 
 <section class="container grey-text">
     <h4 class="center">Ajouter une ville</h4>
