@@ -24,29 +24,24 @@ print_r($villes)
 
 ?>
 <!DOCTYPE html>
-<html >
-
+<html>
 
 <h4 class='center'>Details</h4>
-<div class="container center ">
-    <?php  if($villes): ?>
-        <h2><?php
-            echo htmlspecialchars($villes['descville']);
-            ?></h2>
-        <h4><?php
-            echo htmlspecialchars($villes['nomville']);
-            ?></h4>
-            <p>pays :<?php
-            echo htmlspecialchars($villes['nom_pays']);
-            ?> </p>
-           
-            <h5>site</h5>
-            <p><?php  echo htmlspecialchars($villes['nomsite']);  ?></p>
-            <img src="<?php echo htmlspecialchars($villes['cheminphoto']); ?>" alt="">
-            <?php  else: ?>
-                <h5>no villes</h5>
-                <?php echo print_r($villes)   ?>
-            <?php  endif; ?>
+<div class="container center">
+    <?php if ($villes): ?>
+        <h2><?php echo htmlspecialchars($villes['descville']); ?></h2>
+        <h4><?php echo htmlspecialchars($villes['nomville']); ?></h4>
+        <p>pays: <?php echo htmlspecialchars($villes['nom_pays']); ?></p>
+
+        <h5>site</h5>
+        <p><?php echo htmlspecialchars($villes['nomsite']); ?></p>
+        <?php if (!empty($villes['cheminphoto'])): ?>
+            <img src="<?php echo htmlspecialchars($villes['cheminphoto']); ?>" alt="Image de la ville">
+        <?php endif; ?>
+    <?php else: ?>
+        <h5>no villes</h5>
+        <?php echo print_r($villes); ?>
+    <?php endif; ?>
 </div>
 
 </html>
